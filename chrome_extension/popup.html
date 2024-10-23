@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Thumbnail Downloader</title>
+    <style>
+      body {
+        width: 300px;
+        font-family: 'Poppins', sans-serif;
+      }
+      input, button {
+        margin-top: 10px;
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+      }
+      button {
+        background-color: #5cb85c;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #4cae4c;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>YouTube Thumbnail Downloader</h3>
+    <input type="text" id="youtube_url" placeholder="Enter YouTube URL" />
+    <button id="download_button">Download Thumbnail</button>
+    <div id="message"></div>
+    <img id="thumbnail" style="width:100%; display:none;" />
+    <script src="popup.js"></script>
+  </body>
+</html>
