@@ -6,4 +6,4 @@ werkzeug
 Flask-Mail
 flask-cors
 python-dotenv
-
+gunicorn
