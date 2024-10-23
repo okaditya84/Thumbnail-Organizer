@@ -4,4 +4,6 @@ Flask-Login
 requests
 werkzeug
 Flask-Mail
+flask-cors
+dotenv
 
