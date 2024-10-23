@@ -1,6 +1,3 @@
-
-
-
 from flask import Flask, render_template, request, redirect, url_for, session, flash
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager, UserMixin, login_user, logout_user, login_required, current_user
@@ -9,12 +6,10 @@ import requests
 from models import User, Thumbnail
 from database import db
 import os
-from dotenv import load_dotenv
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///thumbnails.db'
-load_dotenv()
-app.config['SECRET_KEY'] = os.getenv('SECRET_KEY') # Change this to a strong secret key
+app.config['SECRET_KEY'] = os.getenv('SECRET_KEY', 'default_secret_key')  # Change this to a strong secret key
 db.init_app(app)
 
 login_manager = LoginManager()
