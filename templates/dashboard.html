@@ -1,26 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-    <title>Your Dashboard</title>
-</head>
-<body>
-    <div class="container">
-        <h1>Your Thumbnails</h1>
-        <form action="{{ url_for('download_thumbnail') }}" method="POST">
-            <input type="text" name="youtube_url" placeholder="Enter YouTube Video URL" required>
-            <button type="submit">Download Thumbnail</button>
-        </form>
-        <ul>
-            {% for thumbnail in thumbnails %}
-                <li>
-                    <img src="{{ thumbnail.url }}" alt="Thumbnail" style="width: 200px; height: auto;">
-                </li>
-            {% endfor %}
-        </ul>
-        <a href="{{ url_for('logout') }}">Logout</a>
-    </div>
-</body>
-</html>
+
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+     <title>Your Dashboard</title>
+ </head>
+ <body>
+     <div class="container">
+         <h1>Your Thumbnails</h1>
+         <form action="{{ url_for('download_thumbnail') }}" method="POST">
+             <input type="text" name="youtube_url" placeholder="Enter YouTube Video URL" required>
+             <button type="submit">Download Thumbnail</button>
+         </form>
+         <ul>
+             {% for thumbnail in thumbnails %}
+                 <li>
+                     <img src="{{ thumbnail.url }}" alt="Thumbnail" style="width: 200px; height: auto;">
+                 </li>
+             {% endfor %}
+         </ul>
+         <a href="{{ url_for('logout') }}">Logout</a>
+         <a href="{{ url_for('profile') }}">Profile</a>
+     </div>
+ </body>
+ </html>
+ 
+ 

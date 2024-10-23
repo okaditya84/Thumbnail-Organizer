@@ -1,11 +1,22 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.navbar {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
 }
 
 .container {
@@ -14,11 +25,23 @@ body {
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 60px; /* Adjust for the fixed navbar */
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    margin: 0;
+    padding: 20px 0;
 }
 
 input {
     padding: 10px;
     width: 80%;
+    max-width: 400px;
     margin: 10px 0;
 }
 
@@ -44,6 +67,22 @@ img {
     margin: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    max-width: 100%;
+    height: auto;
 }
 
+/* Responsive Design */
+@media (max-width: 600px) {
+    .container {
+        width: 90%;
+        padding: 10px;
+    }
 
+    input {
+        width: 100%;
+    }
+
+    button {
+        width: 100%;
+    }
+}
