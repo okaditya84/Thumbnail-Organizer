@@ -5,5 +5,5 @@ requests
 werkzeug
 Flask-Mail
 flask-cors
-dotenv
+python-dotenv
 
