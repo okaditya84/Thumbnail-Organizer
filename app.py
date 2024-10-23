@@ -29,6 +29,7 @@ def create_tables():
 @app.route('/')
 def index():
     return render_template('index.html')
+#defining the dashboard route
 
 @app.route('/dashboard')
 @login_required
