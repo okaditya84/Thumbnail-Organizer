@@ -1,38 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Login{% endblock %}
 
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-    <title>Login</title>
-</head>
-<body class="bg-light">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="{{ url_for('index') }}">Thumbnail Downloader</a>
-    </nav>
-    <div class="container mt-5">
-        <h2 class="text-center">Login</h2>
-        <form action="{{ url_for('login') }}" method="POST" class="w-50 mx-auto">
-            <div class="form-group">
-                <input type="text" class="form-control" name="username" placeholder="Username" required>
-            </div>
-            <div class="form-group">
-                <input type="password" class="form-control" name="password" placeholder="Password" required>
-            </div>
-            <button type="submit" class="btn btn-primary btn-block">Login</button>
-        </form>
-        <p class="text-center mt-3">Don't have an account? <a href="{{ url_for('signup') }}">Sign up here</a></p>
-    </div>
-    <footer class="text-center py-4">
-        <p>&copy; 2024 Thumbnail Downloader. All rights reserved.</p>
-    </footer>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
-</html>
+{% block content %}
+    <h2 class="text-center">Login</h2>
+    <form action="{{ url_for('login') }}" method="POST" class="w-50 mx-auto">
+        <div class="form-group">
+            <input type="text" class="form-control" name="username" placeholder="Username" required>
+        </div>
+        <div class="form-group">
+            <input type="password" class="form-control" name="password" placeholder="Password" required>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Login</button>
+    </form>
+    <p class="text-center mt-3">Don't have an account? <a href="{{ url_for('signup') }}">Sign up here</a></p>
+{% endblock %}

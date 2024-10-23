@@ -1,42 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
 
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-    <title>YouTube Thumbnail Downloader</title>
-</head>
-<body class="bg-light">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="{{ url_for('index') }}">Thumbnail Downloader</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('login') }}">Login</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('signup') }}">Sign Up</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+{% block content %}
     <div class="container mt-5">
         <h1 class="text-center">Welcome to YouTube Thumbnail Downloader</h1>
         <p class="text-center">Download high-quality thumbnails from YouTube videos effortlessly.</p>
+        <div class="text-center mt-4">
+            <a href="{{ url_for('login') }}" class="btn btn-primary btn-lg mx-2">Login</a>
+            <a href="{{ url_for('signup') }}" class="btn btn-secondary btn-lg mx-2">Sign Up</a>
+        </div>
     </div>
     <footer class="text-center py-4">
         <p>&copy; 2024 Thumbnail Downloader. All rights reserved.</p>
     </footer>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
-</html>
+{% endblock %}
